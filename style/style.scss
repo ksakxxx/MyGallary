@@ -1,0 +1,245 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+*{box-sizing: border-box;}
+a {color: white; text-decoration: none}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --block_bg_color: rgb(47, 47, 47);
+    --accent_color: rgb(100, 21, 114);
+}
+
+@font-face {
+    font-family: 'ofont';
+    src: url("../assets/ofont.ru_Sriracha.ttf") format('woff');
+    font-weight: 400;
+  }
+
+body {
+    background-color: #272727;
+    color: white;
+    font-family: 'ofont';
+    background: url('../assets/1674316210_catherineasquithgallery-com-p-seraya-myataya-bumaga-fon-foto-1.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 1300px) {
+        max-width: 900px;
+        padding: 0 20px;
+    }
+    @media (max-width: 900px) {
+        max-width: 650px;
+    }
+}
+
+.header {
+    background-color: black;
+    padding: 40px 0;
+    filter: drop-shadow(0px 0px 10px rgb(196, 196, 196)) grayscale(0%);
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    .name {
+        position: relative;
+        font-size: 28px;
+        &::after {
+            width: 200%;
+            position: absolute;
+            content: "";
+            bottom: -40PX;
+            font-size: 24px;
+            left: 0;
+        }
+    }
+    .socials {
+        display: flex;
+        gap: 20px;
+        .item {
+            transition: all 0.3s ease;
+            img {
+                // filter: drop-shadow(16px 16px 20px rgb(255, 255, 255)) grayscale(80%);
+                transition: all 0.3s ease;
+            }
+            .icon {
+                max-width: 30px;
+            }
+            &:hover {
+                transform: scale(1.1);
+                img {
+                    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255)) grayscale(0%);
+                    box-shadow: 0px 0px 70px rgb(255, 255, 255);
+                }
+            }
+        }
+    }
+    
+}
+img {
+    width: 500px;
+    max-height: 500px;
+    border-radius: 5px;
+    @media (max-width: 1300px) {
+        max-width: 400px;
+    }
+    @media (max-width: 500px) {
+        max-width: 330px;
+    }
+}
+.about {
+    margin-top: 100px;
+    font-size: 28px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @media (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .left {
+            .text {
+                margin-bottom: 40px;
+                max-width: 600px;
+                @media (max-width: 1300px) {
+                    max-width: 400px;
+                    font-size: 24px;
+                }
+                @media (max-width: 900px) {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .to_gallary_link {
+                margin-top: 40px;
+                padding: 10px 20px;
+                border-radius: 10px;
+                background: black;
+                border: 2px solid white;
+                overflow: hidden;
+                position: relative;
+                transition: all 0.3s ease;
+                @media (max-width: 900px) {
+                    margin-left: 30px;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 5%;
+                    height: 100%;
+                    background-color: rgba(255, 255, 255, 0.573);
+                    border-radius: 5px;
+                    transition: all 0.3s ease;
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                    box-shadow: 0px 0px 40px rgb(255, 255, 255);
+                }
+            }
+        }
+        .right {
+            max-width: 500px;
+        }
+    }
+}
+
+.about2, .about3 {
+    margin: 100px 0px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        @media (max-width: 900px) {
+            flex-direction: column-reverse;
+            text-align: center;
+            align-items: center;
+            gap: 50px;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 28px;
+            max-width: 600px;
+            @media (max-width: 1300px) {
+                max-width: 400px;
+                font-size: 22px;
+            }
+            @media (max-width: 900px) {
+                max-width: 100%;
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+.about2 {
+    .container {
+        flex-direction: row-reverse;
+    }
+}
+
+.gallary {
+    margin-top: 100px;
+    .title {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        font-size: 42px;
+    }
+    .pictures {
+        margin: 50px 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        row-gap: 40px;
+        flex-wrap: wrap;
+        @media (max-width: 1300px) {
+            justify-content: space-around;
+        }
+        .picture_box {
+            max-width: 350px;
+            box-shadow: 20px 20px 50px rgb(141, 141, 141);
+            @media (max-width: 1300px) {
+                max-width: 250px;
+            }
+            @media (max-width: 600px) {
+                max-width: 350px;
+            }
+            img {
+                padding: 0;
+                width: 100%;
+
+            }
+        }
+    }
+    
+}
+
+.back_button {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    justify-content: center;
+    left: 10px;
+    top: 170px;
+    z-index: 10;
+    opacity: 0.6;
+}
